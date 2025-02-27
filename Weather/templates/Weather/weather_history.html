@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather History</title>
+</head>
+<body>
+    <h1>Weather History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Weather Details</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in weather_requests %}
+            <tr>
+                <td>{{ request.city }}</td>
+                <td>
+                    Temperature: {{ request.temperature }} °C, 
+                    Wind Speed: {{ request.wind_speed }} m/s, 
+                    Humidity: {{ request.humidity }}%, 
+                    Cloud Coverage: {{ request.cloud_coverage }}%, 
+                    Rain: {{ request.rain }} mm
+                </td>
+                <td>{{ request.timestamp }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No weather data available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

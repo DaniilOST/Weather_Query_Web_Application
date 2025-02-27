@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/static/Weather/css/styles.css">
+</head>
+<body>
+    <h1>Welcome to Weather App!</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if current_temp is not None %}
+        <h2>Current Temperature in {{ city }}: {{ current_temp }} °C</h2>
+        <h3>Current Wind Speed: {{ current_wind }} m/s</h3>
+        <h3>Rainfall in the last hour: {{ current_rain }} mm</h3>
+        <h3>Humidity: {{ current_humidity }} %</h3>
+        <h3>Cloud Coverage: {{ current_clouds }} %</h3>
+    {% elif city %}
+        <h2>Could not fetch weather for {{ city }}.</h2>
+    {% endif %}
+    <a href="{% url 'weather_history' %}">View Weather History</a>
+</body>
+</html>
