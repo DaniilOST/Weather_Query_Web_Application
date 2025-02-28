@@ -16,12 +16,12 @@ def get_weather(city):
         observation = mgr.weather_at_place(f'{city}')
         w = observation.weather
 
-        w.detailed_status         # 'clouds'
-        S = w.wind()['speed']                  # {'speed': 4.6, 'deg': 330}
-        H = w.humidity                # 87
-        T = w.temperature('celsius')['temp']  # {'temp_max': 10.5, 'temp': 9.7, 'temp_min': 9.0}
-        R = w.rain.get('3h', 0)                  # {}
-        C = w.clouds                  # 75
+        w.detailed_status
+        S = w.wind()['speed']
+        H = w.humidity
+        T = w.temperature('celsius')['temp']
+        R = w.rain.get('3h', 0)
+        C = w.clouds
         
         weather_request = WeatherRequest(
             city=city,
