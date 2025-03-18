@@ -18,7 +18,7 @@
 Сначала клонируй репозиторий на свой локальный компьютер:
 
 ```bash
-git clone https://your-repository-url.git
+git clone https://github.com/DaniilOST/Weather_Query_Web_Application.git
 cd Weather_Query_Web_Application
 ```
 
