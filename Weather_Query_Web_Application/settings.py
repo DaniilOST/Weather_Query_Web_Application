@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y%%5!x*n_wyk4=y152g$^&^k&l6!ufy(%n9&s%k^2re0dhi$48'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'some-default-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,7 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'weather_db',  # Имя базы данных
-        'USER': 'postgres',  # Имя пользователя
+        'USER': 'daniil',  # Имя пользователя
         'PASSWORD': '5216713q',  # Пароль пользователя
         'HOST': 'localhost',  # Адрес хоста (для локальной базы данных)
         'PORT': '5432',  # Порт для PostgreSQL
