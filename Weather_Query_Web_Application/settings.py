@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'weather_db',  # Имя базы данных
-        'USER': 'username',  # Имя пользователя
-        'PASSWORD': 'yourpassword',  # Пароль пользователя
+        'USER': '',  # Имя пользователя
+        'PASSWORD': '',  # Пароль пользователя
         'HOST': 'localhost',  # Адрес хоста (для локальной базы данных)
         'PORT': '5432',  # Порт для PostgreSQL
     }
